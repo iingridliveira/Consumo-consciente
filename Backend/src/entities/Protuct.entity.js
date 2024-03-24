@@ -1,4 +1,4 @@
-class produto {
+class Product{
     constructor(nome, tipo, potencia, tempo,dias,taxa){
         this.nome= nome;
         this.tipo=tipo
@@ -9,5 +9,8 @@ class produto {
         this.consumo = 0
         this.gasto = 0
     }
+
 }
-export {produto}
+
+
+export {Product}

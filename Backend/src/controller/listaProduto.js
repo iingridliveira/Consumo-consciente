@@ -1,89 +1,89 @@
-import { produto } from "../model/produto.js";
-var produtos = []
-function listaProdutos(nome, tipo, potencia, tempo, dias,taxa){
- var novoProduto = new produto(nome, tipo, potencia, tempo, dias,taxa)
- produtos.push(novoProduto)
- return novoProduto;
+import { Product } from "../model/Product.js";
+var Products = []
+function listaProducts(nome, tipo, potencia, tempo, dias,taxa){
+ var novoProduct = new Product(nome, tipo, potencia, tempo, dias,taxa)
+ Products.push(novoProduct)
+ return novoProduct;
 }
-function getProduto() {
-    return produtos;
+function getProduct() {
+    return Products;
 }
 
-function atualizarProdutosconsumo(nome) {
-  let produto = produtos.find(produto => produto.nome ===  nome)
-  if(produto){
-     let ProdutoIndex = produtos.findIndex(produto => produto.nome == nome);
-     produtos[ProdutoIndex].consumo =
-     produtos[ProdutoIndex].consumo =
-     (produtos[ProdutoIndex].potencia *
-     (produtos[ProdutoIndex].tempo*
-      produtos[ProdutoIndex].dias))/1000
-     console.log(`Produto consumindo ${produtos[ProdutoIndex].consumo} kWh`);
-    return produtos[ProdutoIndex];
+function atualizarProductsconsumo(nome) {
+  let Product = Products.find(Product => Product.nome ===  nome)
+  if(Product){
+     let ProductIndex = Products.findIndex(Product => Product.nome == nome);
+     Products[ProductIndex].consumo =
+     Products[ProductIndex].consumo =
+     (Products[ProductIndex].potencia *
+     (Products[ProductIndex].tempo*
+      Products[ProductIndex].dias))/1000
+     console.log(`Product consumindo ${Products[ProductIndex].consumo} kWh`);
+    return Products[ProductIndex];
   }else{
-     return "olha Produto nao encontrado"
+     return "olha Product nao encontrado"
   }
 }
-function getProdutoconsumo() {
-    let produtosAtualizadosconsumo = [];
+function getProductconsumo() {
+    let ProductsAtualizadosconsumo = [];
 
-    for (let i = 0; i < produtos.length; i++) {
-        if (produtos[i].consumo === 0) {
-            return "Olha, o consumo do produto não foi atualizado";
+    for (let i = 0; i < Products.length; i++) {
+        if (Products[i].consumo === 0) {
+            return "Olha, o consumo do Product não foi atualizado";
         } else {
-            produtosAtualizadosconsumo.push(produtos[i]);
+            ProductsAtualizadosconsumo.push(Products[i]);
         }
     }
 
-    return produtosAtualizadosconsumo;
+    return ProductsAtualizadosconsumo;
 }
 
-function atualizarProdutostaxa(nome) {
-    let produto = produtos.find(produto => produto.nome ===  nome)
-    if(produto){
-    let ProdutoIndex = produtos.findIndex(produto => produto.nome == nome);
-     produtos[ProdutoIndex].gasto = produtos[ProdutoIndex].gasto =
-     produtos[ProdutoIndex].consumo * produtos[ProdutoIndex].taxa
-     console.log(`Produto gastou R$ ${produtos[ProdutoIndex].gasto},00 a uma taxa
-     R$${produtos[ProdutoIndex].taxa}`);
-      return produtos[ProdutoIndex];
+function atualizarProductstaxa(nome) {
+    let Product = Products.find(Product => Product.nome ===  nome)
+    if(Product){
+    let ProductIndex = Products.findIndex(Product => Product.nome == nome);
+     Products[ProductIndex].gasto = Products[ProductIndex].gasto =
+     Products[ProductIndex].consumo * Products[ProductIndex].taxa
+     console.log(`Product gastou R$ ${Products[ProductIndex].gasto},00 a uma taxa
+     R$${Products[ProductIndex].taxa}`);
+      return Products[ProductIndex];
     }else{
-       return "olha Produto não encontrado"
+       return "olha Product não encontrado"
     }
   }
-function apagaProdutos(nome) {
-   let produtoApagarIndex = produtos.findIndex(produto => produto.nome === nome);
-    if (produtoApagarIndex !== -1) { 
-     if (produtos[produtoApagarIndex].consumo >= 300) {
-       console.log("Produto atingiu consumo >= 300 kWh");
-       const produtoRemovido = produtos.splice(produtoApagarIndex, 1)[0];
-       return produtoRemovido;
+function apagaProducts(nome) {
+   let ProductApagarIndex = Products.findIndex(Product => Product.nome === nome);
+    if (ProductApagarIndex !== -1) { 
+     if (Products[ProductApagarIndex].consumo >= 300) {
+       console.log("Product atingiu consumo >= 300 kWh");
+       const ProductRemovido = Products.splice(ProductApagarIndex, 1)[0];
+       return ProductRemovido;
        } else {
-           console.log("Produto não atingiu consumo >= 300 kWh");
-           return "Produto não atingiu 300kw/h.";
+           console.log("Product não atingiu consumo >= 300 kWh");
+           return "Product não atingiu 300kw/h.";
        }
     } else {
-       console.log("Produto não encontrado");
-       return "Produto não encontrado.";
+       console.log("Product não encontrado");
+       return "Product não encontrado.";
    }
 }
-function getProdutogasto() {
-    let produtosAtualizadosgasto = [];
+function getProductgasto() {
+    let ProductsAtualizadosgasto = [];
 
-    for (let i = 0; i < produtos.length; i++) {
-        if (produtos[i].gasto === 0) {
-            return "Olha, o gasto do produto não foi atualizado";
+    for (let i = 0; i < Products.length; i++) {
+        if (Products[i].gasto === 0) {
+            return "Olha, o gasto do Product não foi atualizado";
         } else {
-            produtosAtualizadosgasto.push(produtos[i]);
+            ProductsAtualizadosgasto.push(Products[i]);
         }
     }
 
-    return produtosAtualizadosgasto;
+    return ProductsAtualizadosgasto;
 }
-export {listaProdutos,
-        getProduto,
-        getProdutoconsumo,
-        getProdutogasto,
-        atualizarProdutosconsumo,
-        atualizarProdutostaxa,
-        apagaProdutos}
+export {listaProducts,
+        getProduct,
+        getProductconsumo,
+        getProductgasto,
+        atualizarProductsconsumo,
+        atualizarProductstaxa,
+        apagaProducts}
