@@ -1,0 +1,4 @@
+node_modules
+.gitignore
+controller/listaProduto.js
+.env
