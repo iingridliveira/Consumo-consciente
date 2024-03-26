@@ -1,21 +1,10 @@
-/*class Product3{
-    constructor(nome, tipo, potencia, tempo,dias,taxa){
-        this.nome= nome;
-        this.tipo=tipo
-        this.potencia=potencia
-        this.tempo= tempo
-        this.dias= dias
-        this.taxa= taxa
-        this.consumo = 0
-        this.gasto = 0
-    }
 
-
-}*/
 import { Sequelize, DataTypes } from "sequelize";
-import { sequelize as database } from "../database/conection";
+import { seque as database } from "../database/conection.js";
+import { HistorieEntity } from "./Historie.entity.js";
 
-const Product = database.define("tb_product", {
+
+const ProductEntity = database.define("tb_product", {
     id: {
         type: DataTypes.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -28,8 +17,22 @@ const Product = database.define("tb_product", {
     category: {
         type: DataTypes.STRING,
         allowNull: false
-    },
+    }
     
-});
+    
+})
+     ProductEntity.belongsTo(HistorieEntity,{
+    constraint: true,
+    foreignKey: "idHistorie"
 
-export {Product}
+})
+
+
+/*Historie.belongsTo(Product);
+Product.hasOne(Historie);
+Consumed.belongsTo(Product);
+Product.hasOne(Consumed);
+Spending.belongsTo(Product);
+Product.hasOne(Spending);*/
+
+export {ProductEntity}

@@ -1,21 +1,19 @@
-import { Sequelize } from "sequelize";
-import dotenv from "dotenv";
+import { Sequelize} from "sequelize"
 
-dotenv.config();
+const seque = new Sequelize('consumo','root','', {
+    host: 'localhost',
+    dialect: 'mysql'
+});
 
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: 'path/to/database.sqlite'
-  });
 
-const testConnection = async () => {
+async function testConnection(){
     try{
-        await sequelize.authenticate()
-        console.log('Conexão com o banco de dados realizada com sucesso!')
+        await seque.authenticate()
+        console.log('Connection boa')
     } catch(error){
-        console.error('Conexão mal sucedida', error)
+        console.error('Não conseguiu conectar', error)
     }
-
+    
 }
 
-export { sequelize, testConnection}
+export { seque, testConnection}

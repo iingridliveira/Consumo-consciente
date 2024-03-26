@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes } from "sequelize";
-import { sequelize as database } from "../database/conection";
+import { seque as database } from "../database/conection.js";
 
-const Historie = database.define("tb_historie", {
+const HistorieEntity = database.define("tb_historie", {
     id: {
         type: DataTypes.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -24,4 +24,5 @@ const Historie = database.define("tb_historie", {
         allowNull: false
     },
 });
-export{Historie}
+
+export{HistorieEntity}

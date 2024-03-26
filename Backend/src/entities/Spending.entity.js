@@ -1,8 +1,8 @@
 import { Sequelize, DataTypes } from "sequelize";
-import { sequelize as database } from "../database/conection";
+import { seque as database } from "../database/conection.js";
 
 
-const Spending = database.define("tb_spending", {
+const SpendingEntity = database.define("tb_spending", {
     id: {
         type: DataTypes.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -18,4 +18,4 @@ const Spending = database.define("tb_spending", {
     },
     
 });
-export{Spending}
+export{SpendingEntity}

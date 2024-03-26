@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes } from "sequelize";
-import { sequelize as database } from "../database/conection";
+import { seque as database } from "../database/conection.js";
 
-const consumed = database.define("tb_consumed", {
+const ConsumedEntity = database.define("tb_consumed", {
     id: {
         type: DataTypes.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -25,4 +25,4 @@ const consumed = database.define("tb_consumed", {
     },
     
 });
-export{consumed}
+export{ConsumedEntity}
