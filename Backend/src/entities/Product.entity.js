@@ -1,7 +1,6 @@
 
 import { Sequelize, DataTypes } from "sequelize";
 import { seque as database } from "../database/conection.js";
-import { HistorieEntity } from "./Historie.entity.js";
 
 
 const ProductEntity = database.define("tb_product", {
@@ -21,12 +20,7 @@ const ProductEntity = database.define("tb_product", {
     
     
 })
-     ProductEntity.belongsTo(HistorieEntity,{
-    constraint: true,
-    foreignKey: "idHistorie"
-
-})
-
+     
 
 /*Historie.belongsTo(Product);
 Product.hasOne(Historie);

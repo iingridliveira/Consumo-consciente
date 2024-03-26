@@ -1,5 +1,6 @@
 import { Sequelize, DataTypes } from "sequelize";
 import { seque as database } from "../database/conection.js";
+import { ProductEntity } from "./Product.entity.js";
 
 const HistorieEntity = database.define("tb_historie", {
     id: {
@@ -24,5 +25,11 @@ const HistorieEntity = database.define("tb_historie", {
         allowNull: false
     },
 });
+HistorieEntity.belongsTo(ProductEntity,{
+    constraint: true,
+    foreignKey: "id_Product"
+
+})
+
 
 export{HistorieEntity}

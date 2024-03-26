@@ -6,8 +6,7 @@ import { ProductEntity } from "../entities/Product.entity.js";
         await database.sync();
         const newProduct = ProductEntity.create({
             name,
-            category,
-            idHistorie: createHistorie.id
+            category
         });
         return await newProduct;
     }

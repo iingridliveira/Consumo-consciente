@@ -24,5 +24,6 @@ const ConsumedEntity = database.define("tb_consumed", {
         allowNull: false
     },
     
+    
 });
 export{ConsumedEntity}

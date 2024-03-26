@@ -4,14 +4,16 @@ import {createProduct, getAllproducts } from "../controller/product.controller.j
 import { createHistorie } from "../controller/historie.controller.js";
 
 const produtosRoute = Router();
-produtosRoute.post("/historiecriar", (req, res) => {
+produtosRoute.post("/historiecriar/:id_Product", async(req, res) => {
     const {origin,Image,Lifetime,Production_process} = req.body;
-    const novohistorico = createHistorie(origin,Image,Lifetime,Production_process);
+    const {id_Product} = req.params
+    
+    const novohistorico = await createHistorie(origin,Image,Lifetime,Production_process,id_Product);
     res.json({novohistorico});
 });
-produtosRoute.post("/produtcriar", (req, res) => {
-    const { name, categoryl} = req.body;
-    const novoProduto = createProduct( name,category);
+produtosRoute.post("/produtcriar", async (req, res) => {
+    const { name, category} = req.body;
+    const novoProduto = await createProduct( name,category);
     res.json({novoProduto});
 });
 produtosRoute.get("/showproducts", async (req,res)=>{
