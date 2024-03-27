@@ -22,11 +22,5 @@ const ProductEntity = database.define("tb_product", {
 })
      
 
-/*Historie.belongsTo(Product);
-Product.hasOne(Historie);
-Consumed.belongsTo(Product);
-Product.hasOne(Consumed);
-Spending.belongsTo(Product);
-Product.hasOne(Spending);*/
 
 export {ProductEntity}

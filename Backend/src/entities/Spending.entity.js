@@ -18,4 +18,8 @@ const SpendingEntity = database.define("tb_spending", {
     },
     
 });
+   ConsumedEntity.belongsTo(ProductEntity,{
+    constraint: true,
+    foreignKey: "id_Product"
+})
 export{SpendingEntity}

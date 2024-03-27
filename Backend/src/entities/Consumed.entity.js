@@ -23,7 +23,10 @@ const ConsumedEntity = database.define("tb_consumed", {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    
-    
-});
+    });
+
+    ConsumedEntity.belongsTo(ProductEntity,{
+        constraint: true,
+        foreignKey: "id_Product"
+    })
 export{ConsumedEntity}

@@ -1,16 +1,17 @@
-import { seque as database } from "../database/conection.js";
-import { createHistorie } from "./historie.controller.js";
-import { ProductEntity } from "../entities/Product.entity.js";
+import { ProductsService } from "../services/product.service.js";
 
- export async function createProduct(name, category) {
-        await database.sync();
-        const newProduct = ProductEntity.create({
-            name,
-            category
-        });
-        return await newProduct;
-    }
 
-export const getAllproducts = async () =>{
-    return await Product.findAll();
+    const instacieServiceproduct = new ProductsService
+
+    const createProductcontroller =  async (req, res) => {
+    const { name, category} = req.body;
+    const newProduct = await instacieServiceproduct.createProductservice(name,category);
+    res.json({newProduct});
 }
+  
+
+const getAllProductscontroller = async (rec, res) =>{  
+    const Products = await instacieServiceproduct.getallProductservice()
+    res.json({Products})
+}
+    export {createProductcontroller, getAllProductscontroller}  
