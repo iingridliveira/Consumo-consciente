@@ -1,7 +1,8 @@
 import { Sequelize, DataTypes } from "sequelize";
 import { seque as database } from "../database/conection.js";
+import { ProductEntity } from "./Product.entity.js";
 
-const ConsumedEntity = database.define("tb_consumed", {
+const ConsumptionEntity = database.define("tb_consumptions", {
     id: {
         type: DataTypes.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -23,10 +24,15 @@ const ConsumedEntity = database.define("tb_consumed", {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+     resultConsumption:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+     }
+     
     });
 
-    ConsumedEntity.belongsTo(ProductEntity,{
+    ConsumptionEntity.belongsTo(ProductEntity,{
         constraint: true,
         foreignKey: "id_Product"
     })
-export{ConsumedEntity}
+export{ConsumptionEntity}

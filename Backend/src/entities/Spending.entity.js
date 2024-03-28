@@ -1,5 +1,6 @@
 import { Sequelize, DataTypes } from "sequelize";
 import { seque as database } from "../database/conection.js";
+import { ConsumptionEntity } from "./Consumption.entity.js";
 
 
 const SpendingEntity = database.define("tb_spending", {
@@ -16,10 +17,14 @@ const SpendingEntity = database.define("tb_spending", {
         type: DataTypes.DECIMAL,
         allowNull: false
     },
+     resultSpeding:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+     }
     
 });
-   ConsumedEntity.belongsTo(ProductEntity,{
+SpendingEntity.belongsTo(ConsumptionEntity,{
     constraint: true,
-    foreignKey: "id_Product"
+    foreignKey: "id_Consumption"
 })
 export{SpendingEntity}

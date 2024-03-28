@@ -2,7 +2,7 @@ import { Sequelize, DataTypes } from "sequelize";
 import { seque as database } from "../database/conection.js";
 import { ProductEntity } from "./Product.entity.js";
 
-const HistorieEntity = database.define("tb_historie", {
+const HistorieEntity = database.define("tb_histories", {
     id: {
         type: DataTypes.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -25,7 +25,7 @@ const HistorieEntity = database.define("tb_historie", {
         allowNull: false
     },
 });
-HistorieEntity.belongsTo(ProductEntity,{
+    HistorieEntity.belongsTo(ProductEntity,{
     constraint: true,
     foreignKey: "id_Product"
 

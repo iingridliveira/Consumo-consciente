@@ -3,7 +3,7 @@ import { Sequelize, DataTypes } from "sequelize";
 import { seque as database } from "../database/conection.js";
 
 
-const ProductEntity = database.define("tb_product", {
+const ProductEntity = database.define("tb_products", {
     id: {
         type: DataTypes.UUID,
         defaultValue: Sequelize.UUIDV4,
