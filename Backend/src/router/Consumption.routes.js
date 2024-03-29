@@ -5,7 +5,7 @@ import { creatConsumptioncontroller,
 
 const ConsumptionRoutes = Router();
 
-ConsumptionRoutes.post("/createconsumpition/:id_Products", creatConsumptioncontroller)
+ConsumptionRoutes.post("/acreateconsumpition/:id_Products", creatConsumptioncontroller)
 ConsumptionRoutes.get("/ShowConsumptions", getallConsumptioncontroller)
 ConsumptionRoutes.patch("/updateresulteconsupion/:id_Consupitions", updateConsumptionscontroler)
 export{ConsumptionRoutes}

@@ -21,11 +21,11 @@ const ConsumptionEntity = database.define("tb_consumptions", {
         allowNull: false
     },
     days: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DECIMAL,
         allowNull: false
     },
      resultConsumption:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.DECIMAL,
         allowNull: false
      }
      
