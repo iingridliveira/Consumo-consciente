@@ -18,7 +18,16 @@ const creatConsumptioncontroller = async (req, res)=>{
     res.json({newConsumption})
 
 }
- const  allConsumption = async(req,res)=>{
+ const  getallConsumptioncontroller = async(req,res)=>{
     const consunpitions = await instacieServiceConsumption.getallConsumption()
+    res.json({consunpitions}) 
  }
-export {creatConsumptioncontroller}
+const updateConsumptionscontroler = async(req,res)=>{
+    const{id} = req.params
+    const newresultConsumption = await instacieServiceConsumption.updateConsumptionsevice(id)
+    res.json({newresultConsumption}) 
+}
+
+export {creatConsumptioncontroller,
+        getallConsumptioncontroller,
+        updateConsumptionscontroler}

@@ -1,8 +1,11 @@
 import { Router } from "express";
-import { creatConsumptioncontroller } from "../controller/Consumption.controller.js";
+import { creatConsumptioncontroller,
+    getallConsumptioncontroller, 
+    updateConsumptionscontroler } from "../controller/Consumption.controller.js";
 
-const ConsumedRoutes = Router();
+const ConsumptionRoutes = Router();
 
-ConsumedRoutes.post("/Consumocriar/:id_Product", creatConsumptioncontroller)
-
-export{ConsumedRoutes}
+ConsumptionRoutes.post("/createconsumpition/:id_Products", creatConsumptioncontroller)
+ConsumptionRoutes.get("/ShowConsumptions", getallConsumptioncontroller)
+ConsumptionRoutes.patch("/updateresulteconsupion/:id_Consupitions", updateConsumptionscontroler)
+export{ConsumptionRoutes}

@@ -3,8 +3,8 @@ import { createHistoriecontroller, getAllHitoriescontroller } from "../controlle
 
 const HistorieRoutes = Router();
 
-HistorieRoutes.post("/hitorie/:id_Product",createHistoriecontroller);
-HistorieRoutes.get("/mostrashistorico", getAllHitoriescontroller);
+HistorieRoutes.post("/cretehitorie/:id_Product",createHistoriecontroller);
+HistorieRoutes.get("/showhistoroie", getAllHitoriescontroller);
 
 export{HistorieRoutes}
 

@@ -1,5 +1,5 @@
 import { Sequelize, DataTypes } from "sequelize";
-import { seque as database } from "../database/conection.js";
+import { sequelize as database } from "../database/conection.js";
 import { ProductEntity } from "./Product.entity.js";
 
 const ConsumptionEntity = database.define("tb_consumptions", {

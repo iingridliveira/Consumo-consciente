@@ -1,5 +1,5 @@
 import { Sequelize, DataTypes } from "sequelize";
-import { seque as database } from "../database/conection.js";
+import { sequelize as database } from "../database/conection.js";
 import { ConsumptionEntity } from "./Consumption.entity.js";
 
 
