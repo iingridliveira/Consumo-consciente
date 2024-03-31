@@ -7,7 +7,7 @@ const Products = () => {
         try {
 
             const  response = await
-                axios.get("http://consumo-consciente.onrender.com/showproducts")
+                axios.get("https://consumo-consciente.onrender.com/showproducts")
             console.log(response)
            const data = response.data
             console.log(data)
