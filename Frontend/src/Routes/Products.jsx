@@ -10,7 +10,7 @@ const Products = () => {
                 axios.get("http://consumo-consciente.onrender.com/showproducts")
 
            const data = response.data
-            console.log(data)
+            console.log(response)
         }
         catch (error){
          console.log(error)
