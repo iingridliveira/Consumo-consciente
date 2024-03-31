@@ -6,7 +6,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
 import "./index.css";
-import Historie from "./Routes/Historie.jsx";
+/*import Historie from "./Routes/Historie.jsx";*/
 import Products from "./Routes/Products.jsx";
 import Sobre from "./Routes/Sobre.jsx";
 
@@ -22,10 +22,10 @@ const router = createBrowserRouter([{
             element:<Products/>,
         },
 
-        {
+       /* {
             path: "/Historie",
             element: <Historie/>,
-        },
+        },*/
 
     ],
 }]);

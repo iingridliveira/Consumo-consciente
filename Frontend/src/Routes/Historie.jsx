@@ -1,5 +1,5 @@
 
-import Forms from "../components/Forms/Forms.jsx";
+/*import Forms from "../components/Forms/Forms.jsx";
 
 
 const Historie = () => {
@@ -12,4 +12,4 @@ const Historie = () => {
 
  )
 }
-export default Historie
+export default Historie*/
