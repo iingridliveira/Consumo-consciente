@@ -1,3 +1,5 @@
+.idea
+.gitignore
 # Logs
 logs
 *.log

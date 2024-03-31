@@ -1,6 +1,15 @@
- const Historie = () => {
+
+import Forms from "../components/Forms/Forms.jsx";
+
+
+const Historie = () => {
  return (
-     <div>historie</div>
+     <div>
+       <Forms/>
+
+
+     </div>
+
  )
 }
-export default  Historie
+export default Historie

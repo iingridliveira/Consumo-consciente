@@ -2,3 +2,5 @@ node_modules
 .gitignore
 controller/listaProduto.js
 .env
+.idea
+components

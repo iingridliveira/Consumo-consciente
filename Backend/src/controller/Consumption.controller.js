@@ -23,7 +23,7 @@ const creatConsumptioncontroller = async (req, res)=>{
     res.json({consunpitions}) 
  }
 const updateConsumptionscontroler = async(req,res)=>{
-    const{id} = req.params
+    const{id} = req.params;
     const newresultConsumption = await instacieServiceConsumption.updateConsumptionsevice(id)
     res.json({newresultConsumption}) 
 }
