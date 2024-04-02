@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 
 import axios from "axios";
-
+import {Link} from "react-router-dom";
+import blogFetch from "../axios/config.js";
 const Product = () => {
 
     const [Products, setProducts] = useState([]);
 
     const getProducts = async () => {
         try {
-            let response;
-            response= await axios({
+
+            const response= await blogFetch({
                 method: 'get',
-                url: "http://localhost:4443/showproducts",
+                url: "/showproducts",
                 responseType: 'json' // Definindo o responseType como 'json'
 
             });
@@ -33,6 +34,7 @@ const Product = () => {
                     <div className="post" key={product.id}>
                         <h1>{product.name}</h1>
                         <p>{product.category}</p>
+                        <Link to={`/produtos/${product.id}`} className={"btn"}>ler mais</Link>
                     </div>))}
         </div>
     )
