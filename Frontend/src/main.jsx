@@ -7,8 +7,10 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
 import "./index.css";
 /*import Historie from "./Routes/Historie.jsx";*/
-import Products from "./Routes/Products.jsx";
+
 import Sobre from "./Routes/Sobre.jsx";
+import Product from "./Routes/Products.jsx";
+
 
 const router = createBrowserRouter([{
     element: <App/>,
@@ -19,7 +21,7 @@ const router = createBrowserRouter([{
         },
         {
             path: "/Products",
-            element:<Products/>,
+            element: <Product/>
         },
 
        /* {

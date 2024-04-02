@@ -1,28 +1,42 @@
-import {useEffect, /*useState*/} from "react";
+import { useEffect, useState } from "react";
+
 import axios from "axios";
-const Products = () => {
 
-    /* const [products,setproducts ] = useState([]);*/
-     const getproducts = async () => {
+const Product = () => {
+
+    const [Products, setProducts] = useState([]);
+
+    const getProducts = async () => {
         try {
+            let response;
+            response= await axios({
+                method: 'get',
+                url: "http://localhost:4443/showproducts",
+                responseType: 'json' // Definindo o responseType como 'json'
 
-            const  response = await
-                axios.get("https://consumo-consciente.onrender.com/showproducts")
+            });
             console.log(response)
-           const data = response.data
-            console.log(data)
+            setProducts(response.data.Products);
+        } catch (error) {
+            console.log(error);
         }
-        catch (error){
-         console.log(error)
+    }
 
-        }
-     }
     useEffect(() => {
-      getproducts();
+        getProducts();
     }, []);
-    return (
+    return(
+        <div>
 
-        <div>Produtos</div>
+            { Products.length === 0 ? <p>Carregando ...< /p> : (
+                Products.map((product) =>
+                    <div className="post" key={product.id}>
+                        <h1>{product.name}</h1>
+                        <p>{product.category}</p>
+                    </div>))}
+        </div>
     )
+
 }
-export default Products
+
+export default Product;
