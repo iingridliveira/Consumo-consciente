@@ -11,7 +11,7 @@ function App() {
 
       <div>
 
-      <Navbar/>
+      <Navbar title={"Consumo consciente"} Products={"Produtos"} Historie={"Historico"}/>
           <Outlet/>
       </div>
 

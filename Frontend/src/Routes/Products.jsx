@@ -1,8 +1,8 @@
+import "./Product.css"
 import { useEffect, useState } from "react";
-
-import axios from "axios";
-import {Link} from "react-router-dom";
+import { Outlet} from "react-router-dom";
 import blogFetch from "../axios/config.js";
+import Navbar from "../components/Header/Navbar.jsx";
 const Product = () => {
 
     const [Products, setProducts] = useState([]);
@@ -13,7 +13,7 @@ const Product = () => {
             const response= await blogFetch({
                 method: 'get',
                 url: "/showproducts",
-                responseType: 'json' // Definindo o responseType como 'json'
+                responseType: 'json'
 
             });
             console.log(response)
@@ -26,19 +26,23 @@ const Product = () => {
     useEffect(() => {
         getProducts();
     }, []);
-    return(
-        <div>
 
-            { Products.length === 0 ? <p>Carregando ...< /p> : (
-                Products.map((product) =>
+    return(
+        
+         <div className={"card-product"}>
+            { Products.length === 0 ? <h1>Carregando ...</h1> : (
+                Products.map((product) => (
                     <div className="post" key={product.id}>
+                        <div className={"entyty"}>
                         <h1>{product.name}</h1>
                         <p>{product.category}</p>
-                        <Link to={`/produtos/${product.id}`} className={"btn"}>ler mais</Link>
-                    </div>))}
-        </div>
+                        </div>
+                        <Navbar about={"Criar"} Consume={"Consumo"} />
+                        <Outlet/>
+                    </div>)))}
+
+          </div> 
     )
 
 }
-
-export default Product;
+export default Product

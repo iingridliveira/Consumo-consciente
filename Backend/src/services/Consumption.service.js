@@ -43,5 +43,10 @@ class ConsumptionService{
             }
             )
     }
-}}
+
+}
+
+
+}
+
    export {ConsumptionService}
