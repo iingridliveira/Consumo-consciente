@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 const Navbar = ({title,Products,Historie}) => {
     return(
         <nav className={"nav-bar"}>
-         <h2>
-             <Link to={`/`}>{title}</Link></h2>
+         <h2>{title}</h2>
             <ul>
 
                 <li>
-                    <Link to={`/Products`}>{Products}</Link>
+                    <Link to={`/`}>{Products}</Link>
                 </li>
                 <li>
                     <Link to={`/Historie`}>{Historie}</Link>
