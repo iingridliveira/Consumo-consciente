@@ -10,10 +10,12 @@ import "./index.css";
 
 
 
-import Historie from "./routes/Historie.jsx";
-import CreatProduct from "./routes/CreatProduct.jsx";
+
+import CreatProduct from "./routes/CreatProduct";
 import Product from "./routes/Products.jsx";
-import Consumption from "./routes/Consunpition.jsx";
+import Consumption from "./routes/Consunpition";
+import Historie1 from "./routes/Historie.jsx";
+
 
 
 const router = createBrowserRouter([{
@@ -30,7 +32,7 @@ const router = createBrowserRouter([{
 
        {
             path: "/Historie",
-            element: <Historie/>,
+            element: <Historie1/>,
         },
 
         {

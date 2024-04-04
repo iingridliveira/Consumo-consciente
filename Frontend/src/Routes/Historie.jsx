@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { Outlet} from "react-router-dom";
 import blogFetch from "../axios/config.js";
 import Navbar from "../components/Header/Navbar.jsx";
+import Button from "../components/Button/Button.jsx";
 
-const Historie = () => {
+const Historie1 = () => {
 
     const [Histories, setHistories] = useState([]);
 
@@ -39,7 +40,7 @@ const Historie = () => {
                             <p>{historie.Production_process}</p>
 
                         </div>
-                        <Navbar Products={"Produto"} />
+                       <Button Consume={"Consumo"} about={"criar"}/>
 
                         <Outlet/>
                     </div>)))}
@@ -48,4 +49,5 @@ const Historie = () => {
     )
 
 }
-export default Historie
+
+export default Historie1

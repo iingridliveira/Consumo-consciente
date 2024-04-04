@@ -2,7 +2,7 @@ import "./Product.css"
 import { useEffect, useState } from "react";
 import { Outlet} from "react-router-dom";
 import blogFetch from "../axios/config.js";
-import Navbar from "../components/Header/Navbar.jsx";
+import Button from "../components/Button/Button.jsx";
 const Product = () => {
 
     const [Products, setProducts] = useState([]);
@@ -37,7 +37,7 @@ const Product = () => {
                         <h1>{product.name}</h1>
                         <p>{product.category}</p>
                         </div>
-                        <Navbar about={"Criar"} Consume={"Consumo"} />
+                        <Button Consume={"Consumo"} about={"criar"}/>
                         <Outlet/>
                     </div>)))}
 

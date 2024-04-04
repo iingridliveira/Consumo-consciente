@@ -1,14 +1,13 @@
 import {Link} from "react-router-dom";
 import './Navbar.css'
 import PropTypes from 'prop-types';
-const Navbar = ({title,about,Products,Historie,Consume}) => {
+const Navbar = ({title,Products,Historie}) => {
     return(
         <nav className={"nav-bar"}>
-         <h2><Link to={`/`}>{title}</Link></h2>
+         <h2>
+             <Link to={`/`}>{title}</Link></h2>
             <ul>
-                <li>
-                    <Link to={`/`}>{about}</Link>
-                </li>
+
                 <li>
                     <Link to={`/Products`}>{Products}</Link>
                 </li>
@@ -16,10 +15,6 @@ const Navbar = ({title,about,Products,Historie,Consume}) => {
                     <Link to={`/Historie`}>{Historie}</Link>
                 </li>
 
-
-                <li>
-                    <Link to={`/Consumo`}>{Consume}</Link>
-                </li>
             </ul>
         </nav>
 
@@ -28,10 +23,8 @@ const Navbar = ({title,about,Products,Historie,Consume}) => {
 }
 Navbar.propTypes = {
     title: PropTypes.string.isRequired,
-    about: PropTypes.string.isRequired,
   Products: PropTypes.string.isRequired,
   Historie: PropTypes.string.isRequired,
-    Consume: PropTypes.string.isRequired,
 };
 
 
