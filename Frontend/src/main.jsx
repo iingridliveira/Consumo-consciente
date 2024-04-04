@@ -11,7 +11,7 @@ import "./index.css";
 
 
 
-import CreatProduct from "./routes/CreatProduct";
+import CreatProduct1 from "./routes/CreatProduct";
 import Product from "./routes/Products.jsx";
 import Consumption from "./routes/Consunpition";
 import Historie1 from "./routes/Historie.jsx";
@@ -22,8 +22,8 @@ const router = createBrowserRouter([{
     element: <App/>,
     children:[
         {
-            path:"/",
-            element:<CreatProduct/>,
+            path:"/creatProduct",
+            element:<CreatProduct1/>,
         },
         {
             path: "/Products",

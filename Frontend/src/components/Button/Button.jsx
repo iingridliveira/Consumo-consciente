@@ -6,7 +6,7 @@ const Button = ({about, Consume}) => {
         <div className={"btn"}>
             <ul>
                 <li>
-                    <Link to={`/`}>{about}</Link>
+                    <Link to={`/creatProduct`}>{about}</Link>
                 </li>
                 <li>
                     <Link to={`/Consumo`}>{Consume}</Link>

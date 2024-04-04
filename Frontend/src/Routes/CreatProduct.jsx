@@ -3,7 +3,7 @@ import blogFetch from "../axios/config";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const CreatProduct = () => {
+const CreatProduct1 = () => {
 
  const navigate = useNavigate()
 
@@ -48,4 +48,4 @@ const CreatProduct = () => {
   </div>
   )
   }
-  export default CreatProduct;
+  export default CreatProduct1;
