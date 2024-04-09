@@ -11,7 +11,7 @@ const Navbar = ({title,Products,Historie}) => {
                     <Link to={`/`}>{Products}</Link>
                 </li>
                 <li>
-                    <Link to={`/Historie`}>{Historie}</Link>
+                    <Link to={`/Historie/:id`}>{Historie}</Link>
                 </li>
 
             </ul>

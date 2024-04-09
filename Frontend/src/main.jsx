@@ -5,16 +5,18 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider, /*Route*/ } from "react-router-dom";
 
 import "./index.css";
+import CreatProduct1 from "./Routes/CreatProduct.jsx";
+import Product from "./Routes/Products.jsx";
+import Historie1 from "./Routes/Historie.jsx";
+import Consumption from "./Routes/Consunpition.jsx";
 
 
 
 
 
 
-import CreatProduct1 from "./routes/CreatProduct";
-import Product from "./routes/Products.jsx";
-import Consumption from "./routes/Consunpition";
-import Historie1 from "./routes/Historie.jsx";
+
+
 
 
 
@@ -31,12 +33,12 @@ const router = createBrowserRouter([{
         },
 
        {
-            path: "/Historie",
+            path: "/Historie/:id",
             element: <Historie1/>,
         },
 
         {
-            path: "/Consumo",
+            path: "/Consumo/:id",
             element: <Consumption/>,
         }
 

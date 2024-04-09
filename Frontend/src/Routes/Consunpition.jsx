@@ -32,7 +32,13 @@ const Consumption = () => {
                 Consumptions.map((consumption) => (
                     <div className="post" key={consumption.id}>
                         <div className={"entyty"}>
-                            <h1>{consumption.day}</h1>
+                            <h1>{consumption.days} dias</h1>
+                            <p>{consumption.Measurement}</p>
+                            <p>{consumption.power}</p>
+                            <p>{consumption.duration}</p>
+
+
+                            <h1></h1>
 
                         </div>
 

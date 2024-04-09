@@ -37,7 +37,7 @@ const Product = () => {
                         <h1>{product.name}</h1>
                         <p>{product.category}</p>
                         </div>
-                        <Button Consume={"Consumo"} about={"criar"}/>
+                        <Button Consume={"Consumo"} about={"criar"} id={"product.id"}/>
                         <Outlet/>
                     </div>)))}
 

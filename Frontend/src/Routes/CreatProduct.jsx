@@ -1,11 +1,11 @@
 import './Sobre.css'
 import blogFetch from "../axios/config";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 
 const CreatProduct1 = () => {
 
- const navigate = useNavigate()
+
 
   const [name, setName] = useState();
   const [category, setCategory]= useState();
@@ -48,4 +48,4 @@ const CreatProduct1 = () => {
   </div>
   )
   }
-  export default CreatProduct1;
+  export default CreatProduct1

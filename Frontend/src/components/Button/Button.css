@@ -1,3 +1,16 @@
-.btn{
-    background-color: rgb(0, 21, 255);
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+    list-style: none;
+   margin-left: 30px;
+    align-items: center;
+
+}
+li{
+    background-color:#1C2662;
+    margin: 5px;
+    width: 100px;
+    border-radius: 5px;
 }
