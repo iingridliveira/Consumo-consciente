@@ -40,9 +40,21 @@ const Historie1 = () => {
                 Histories.map((historie) => (
                     <div className="historie-post" key={historie.id_Product}>
                         <div className={"entyty-historie"}>
-                            <h1>{historie.origin}</h1>
-                            <p>{historie.Production_process}</p>
 
+                          
+                            <img src={historie.Image} alt="Descrição da imagem" />
+                            <p><h2>Sobre</h2>{historie.Production_process}</p>
+                            <ul >
+                                <li>
+                                <h4>Origem:⬇️  {historie.origin}</h4>
+                                </li>
+                                <li >
+                                <h4>Vida útil:➡️ {historie.Lifetime}</h4>
+                                </li>
+                            </ul>
+                            
+                            
+                            
                         </div>
                      <ButtonBack about={"Inicio"} products={"Produtos"} />
                     </div>)))}
