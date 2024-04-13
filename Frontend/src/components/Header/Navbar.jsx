@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import {Link} from "react-router-dom";
 import './Navbar.css'
-import PropTypes from 'prop-types';
+
 const Navbar = ({title,Products,Historie}) => {
     return(
         <nav className={"nav-bar"}>
@@ -11,7 +12,7 @@ const Navbar = ({title,Products,Historie}) => {
                     <Link to={`/`}>{Products}</Link>
                 </li>
                 <li>
-                    <Link to={`/Historie/:id`}>{Historie}</Link>
+                    <Link to={`/Historie/:id_Product`}>{Historie}</Link>
                 </li>
 
             </ul>
@@ -20,11 +21,7 @@ const Navbar = ({title,Products,Historie}) => {
     )
 
 }
-Navbar.propTypes = {
-    title: PropTypes.string.isRequired,
-  Products: PropTypes.string.isRequired,
-  Historie: PropTypes.string.isRequired,
-};
+
 
 
   

@@ -36,8 +36,9 @@ const Product = () => {
                         <div className={"entyty"}>
                         <h1>{product.name}</h1>
                         <p>{product.category}</p>
+        
                         </div>
-                        <Button Consume={"Consumo"} about={"criar"} id={"product.id"}/>
+                        <Button Consume={"Consumo"}id={product.id} Historie={"Saiba mais"}/>
                         <Outlet/>
                     </div>)))}
 

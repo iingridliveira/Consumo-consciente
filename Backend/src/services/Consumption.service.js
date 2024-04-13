@@ -43,9 +43,23 @@ class ConsumptionService{
             }
             )
     }
+   
 
 }
-
+async UpdateConsumption(id, newIdproduct) {
+  const ConsumptionId = await ConsumptionEntity.findByPk(id);
+  if (!ConsumptionId) {
+      throw new NotFoundError(`Produto não encontrado(a)`);
+  }
+  await ConsumptionEntity.update( 
+    { id_Product: newIdproduct},
+    {
+      where: {
+        id,
+      },
+    });
+  return `Deletado com sucesso!`;
+}
 
 }
 

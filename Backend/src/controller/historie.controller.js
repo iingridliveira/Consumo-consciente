@@ -17,7 +17,7 @@ const getAllHitoriescontroller = async (rec, res) =>{
        const histories = await instacieServiceHistorie.getallHistories()
        res.json({histories})
    } 
-  
+
 
 
 

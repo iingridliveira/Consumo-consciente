@@ -1,12 +1,12 @@
 import "./Historie.css"
 import { useEffect, useState } from "react";
-import { Outlet} from "react-router-dom";
+import { useParams } from 'react-router';
+
 import blogFetch from "../axios/config.js";
-import Navbar from "../components/Header/Navbar.jsx";
-import Button from "../components/Button/Button.jsx";
+import { ButtonBack } from "../components/Buttonback/index.jsx";
 
 const Historie1 = () => {
-
+    const params= useParams()
     const [Histories, setHistories] = useState([]);
 
     const getProducts = async () => {
@@ -19,7 +19,11 @@ const Historie1 = () => {
 
             });
             console.log(response)
-            setHistories(response.data.histories);
+            const historiesfilter = response?.data?.histories?.filter((historie)=>{
+            return historie.id_Product == params.id_Product
+            })
+            console.log(historiesfilter)
+            setHistories(historiesfilter);
         } catch (error) {
             console.log(error);
         }
@@ -34,15 +38,13 @@ const Historie1 = () => {
         <div className={"card-historie"}>
             { Histories.length === 0 ? <p>Carregando ...</p> : (
                 Histories.map((historie) => (
-                    <div className="historie-post" key={historie.id}>
+                    <div className="historie-post" key={historie.id_Product}>
                         <div className={"entyty-historie"}>
                             <h1>{historie.origin}</h1>
                             <p>{historie.Production_process}</p>
 
                         </div>
-                       <Button Consume={"Consumo"} about={"criar"}/>
-
-                        <Outlet/>
+                     <ButtonBack about={"Inicio"} products={"Produtos"} />
                     </div>)))}
 
         </div>

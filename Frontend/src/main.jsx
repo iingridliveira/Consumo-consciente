@@ -33,12 +33,12 @@ const router = createBrowserRouter([{
         },
 
        {
-            path: "/Historie/:id",
+            path: "/Historie/:id_Product",
             element: <Historie1/>,
         },
 
         {
-            path: "/Consumo/:id",
+            path: "/Consumo/:id_Product",
             element: <Consumption/>,
         }
 

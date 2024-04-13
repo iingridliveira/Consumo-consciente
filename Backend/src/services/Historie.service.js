@@ -5,8 +5,8 @@ class HistorieService{
         origin,
         Image,
         Lifetime,
-        Production_process,
-        id_Product
+        Historieion_process,
+        id_Historie
 
     )
   { 
@@ -15,8 +15,8 @@ class HistorieService{
         origin,
         Image,
         Lifetime,
-        Production_process,
-        id_Product
+        Historieion_process,
+        id_Historie
 
     })
     return Historie
@@ -26,5 +26,17 @@ class HistorieService{
    const allHistories = await HistorieEntity.findAll()
    return allHistories
    }
+   async UpdateHistorie(id) {
+    const HistorieId = await HistorieEntity.findByPk(id);
+    if (!HistorieId) {
+        throw new NotFoundError(`Produto não encontrado(a)`);
+    }
+    await HistorieEntity.update({
+        where: {
+            id_Product,
+        },
+    });
+    return `Deletado com sucesso!`;
+}
 }
    export{HistorieService}

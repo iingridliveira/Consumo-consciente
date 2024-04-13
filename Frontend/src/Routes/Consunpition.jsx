@@ -1,10 +1,12 @@
 import "./Product.css"
 import { useEffect, useState } from "react";
+import { useParams } from 'react-router';
 import blogFetch from "../axios/config.js";
 const Consumption = () => {
 
+    const params= useParams()
 
-    const [Consumptions, setConsumptions] = useState([]);
+    const [Consunptions, setConsumptions] = useState([]);
 
     const getProducts = async () => {
         try {
@@ -15,22 +17,29 @@ const Consumption = () => {
                 responseType: 'json'
 
             });
+         
             console.log(response)
-            setConsumptions(response.data.consunpitions);
+         
+                const consunpitionsfilter =  response?.data?.consunpitions?.filter((consumption)=>{
+                return consumption.id_Product == params.id_Product
+                })
+            
+            console.log(consunpitionsfilter)
+            setConsumptions(consunpitionsfilter);
         } catch (error) {
             console.log(error);
         }
     }
-
+    
     useEffect(() => {
         getProducts();
-    }, []);
+    },[]);
     return(
 
         <div className={"card-consumption"}>
-            { Consumptions.length === 0 ? <h1>Carregando ...</h1> : (
-                Consumptions.map((consumption) => (
-                    <div className="post" key={consumption.id}>
+            { Consunptions.length === 0 ? <h1>Carregando ...</h1> : (
+                Consunptions.map((consumption) => (
+                    <div className="post" key={consumption.id_Product}>
                         <div className={"entyty"}>
                             <h1>{consumption.days} dias</h1>
                             <p>{consumption.Measurement}</p>
