@@ -4,7 +4,7 @@ Consumo Consciente é um projeto que visa promover produtos que se destacam pelo
 
 ## Objetivo
 
-O objetivo deste projeto é fornecer uma plataforma onde os usuários possam encontrar produtos que são eficientes em termos de consumo de energia, ajudando a promover um estilo de vida mais sustentável e consciente.
+O objetivo deste projeto é fornecer uma plataforma onde  possam encontrar produtos que são eficientes em termos de consumo de energia, ajudando a promover um estilo de vida mais sustentável e consciente.
 
 
 ## Como Iniciar
