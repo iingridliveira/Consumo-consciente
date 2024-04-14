@@ -9,15 +9,28 @@
     justify-content: space-between;
     background-color:#1C2662;
     width: 100%;
-    padding: 10px;
+ 
 
 
+}
+.logo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px; 
+}
+.logo h2{
+    margin-top: 25px;
 }
 .nav-bar li{
  list-style: none;
  display: inline;
 margin: 10px;
 
+}
+.nav-bar  img{
+    width: 100px;
+    height: 90px;
 }
 @media screen and (max-width: 480px) {
     .nav-bar li{

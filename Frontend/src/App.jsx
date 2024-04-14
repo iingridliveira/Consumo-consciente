@@ -11,7 +11,7 @@ function App() {
 
       <div>
 
-      <Navbar title={"Consumo consciente"} Products={"Produtos"} Historie={"Historico"}/>
+      <Navbar title={"Consumo Consciente"} logo={"https://i.im.ge/2024/04/14/ZTlDp8.1edd2f03-867f-430e-a181-228d71f58135-removebg-preview-1.png"} Products={"Produtos"} Historie={"Historico"}/>
           <Outlet/>
       </div>
 

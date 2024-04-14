@@ -49,7 +49,7 @@ const Historie1 = () => {
                                 <h4>Origem:⬇️  {historie.origin}</h4>
                                 </li>
                                 <li >
-                                <h4>Vida útil:➡️ {historie.Lifetime}</h4>
+                                <h4>Vida útil:⬇️ {historie.Lifetime}</h4>
                                 </li>
                             </ul>
                             

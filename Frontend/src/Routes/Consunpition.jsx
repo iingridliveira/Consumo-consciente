@@ -41,10 +41,11 @@ const Consumption = () => {
                 Consunptions.map((consumption) => (
                     <div className="post" key={consumption.id_Product}>
                         <div className={"entyty"}>
-                            <h1>{consumption.days} dias</h1>
-                            <p>{consumption.Measurement}</p>
-                            <p>{consumption.power}</p>
-                            <p>{consumption.duration}</p>
+                            <h1>Em {consumption.days} dias</h1>
+                            <p>medidos em{consumption.Measurement} 
+                            </p><p>e sua potência de{consumption.power} Watts</p>
+                            em {consumption.duration} hora, tendo um total de 
+                            <p>{consumption.resultConsumption} kW/hr</p>
 
 
                             <h1></h1>
