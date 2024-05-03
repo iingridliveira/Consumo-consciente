@@ -10,7 +10,7 @@ import { ProductsService } from "../services/product.service.js";
 }
   
 
-const getAllProductscontroller = async (rec, res) =>{  
+const getAllProductscontroller = async (req, res) =>{
     const Products = await instacieServiceproduct.getallProductservice()
     res.json({Products})
 }

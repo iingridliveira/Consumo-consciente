@@ -13,7 +13,7 @@ const newHistorie = await instacieServiceHistorie.createHistorie(
        res.json({newHistorie});      
 }
  
-const getAllHitoriescontroller = async (rec, res) =>{  
+const getAllHitoriescontroller = async (req, res) =>{
        const histories = await instacieServiceHistorie.getallHistories()
        res.json({histories})
    } 

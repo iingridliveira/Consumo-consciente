@@ -3,23 +3,24 @@ import { Sequelize, DataTypes } from "sequelize";
 import { sequelize as database } from "../database/conection.js";
 
 
-const ProductEntity = database.define("tb_products", {
+let ProductEntity;
+ProductEntity = database.define("tb_products", {
     id: {
         type: DataTypes.UUID,
         defaultValue: Sequelize.UUIDV4,
         primaryKey: true
     },
     name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(30),
         allowNull: false
     },
     category: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(30),
         allowNull: false
     }
-    
-    
-})
+
+
+});
      
 
 
