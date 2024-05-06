@@ -7,8 +7,8 @@ const CreatProduct1 = () => {
 
 
 
-  const [name, setName] = useState();
-  const [category, setCategory]= useState();
+  const [name, setName] = useState("");
+  const [category, setCategory]= useState("");
 
    const creatSobre = async (e)=>{
       e.preventDefault()
