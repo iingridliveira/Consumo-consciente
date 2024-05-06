@@ -7,7 +7,7 @@ import { Routes } from "./src/router/index.routes.js";
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
-app.use(cors({origin: "*"}))
+app.use(cors({origin: "https://consumo-consciente-3.onrender.com/"}))
 app.use(express.json());
 app.use(Routes);
 
