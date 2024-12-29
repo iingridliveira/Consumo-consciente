@@ -1,62 +1,67 @@
-import "./Product.css"
+import "./Product.css";
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router';
+import { useParams } from "react-router";
 import blogFetch from "../axios/config.js";
+
 const Consumption = () => {
+  const params = useParams();
 
-    const params= useParams()
+  const [Consumptions, setConsumptions] = useState([]);
 
-    const [Consunptions, setConsumptions] = useState([]);
+  const getProducts = async () => {
+    try {
+      const response = await blogFetch({
+        method: "get",
+        url: "/ShowConsumptions",
+        responseType: "json",
+      });
 
-    const getProducts = async () => {
-        try {
+      const consumptionsFilter = response?.data?.consunpitions?.filter(
+        (consumption) => consumption.id_Product == params.id_Product
+      );
 
-            const response= await blogFetch({
-                method: 'get',
-                url: "/ShowConsumptions",
-                responseType: 'json'
-
-            });
-         
-            console.log(response)
-         
-                const consunpitionsfilter =  response?.data?.consunpitions?.filter((consumption)=>{
-                return consumption.id_Product == params.id_Product
-                })
-            
-            console.log(consunpitionsfilter)
-            setConsumptions(consunpitionsfilter);
-        } catch (error) {
-            console.log(error);
-        }
+      setConsumptions(consumptionsFilter);
+    } catch (error) {
+      console.error(error);
     }
-    
-    useEffect(() => {
-        getProducts();
-    },[]);
-    return(
+  };
 
-        <div className={"card-consumption"}>
-            { Consunptions.length === 0 ? <h1>Carregando ...</h1> : (
-                Consunptions.map((consumption) => (
-                    <div className="post" key={consumption.id_Product}>
-                        <div className={"entyty"}>
-                            <h1>Em {consumption.days} dias</h1>
-                            <p>medidos em{consumption.Measurement} 
-                            </p><p>e sua potência de{consumption.power} Watts</p>
-                            em {consumption.duration} hora, tendo um total de 
-                            <p>{consumption.resultConsumption} kW/hr</p>
+  useEffect(() => {
+    getProducts();
+  }, []);
 
-
-                            <h1></h1>
-
-                        </div>
-
-                    </div>)))}
-
+  return (
+    <div className="container mt-5">
+      {Consumptions.length === 0 ? (
+        <h1 className="text-center">Carregando...</h1>
+      ) : (
+        <div className="row">
+          {Consumptions.map((consumption) => (
+            <div
+              className="col-md-6 col-lg-4 mb-4"
+              key={consumption.id_Product}
+            >
+              <div className="card  bg-warning shadow-sm h-100">
+                <div className="card-body">
+                  <h5 className="card-title text-primary">
+                    Em {consumption.days} dias
+                  </h5>
+                  <p className="card-text">
+                    Medidos em {consumption.Measurement}, com uma potência de{" "}
+                    {consumption.power} Watts.
+                  </p>
+                  <p className="card-text">
+                    Em {consumption.duration} hora(s), totalizando{" "}
+                    <strong>{consumption.resultConsumption} kW/h</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-    )
+      )}
+    </div>
+  );
+};
 
-
-}
-export default Consumption
+export default Consumption;

@@ -19,7 +19,7 @@ const Navbar = ({ logo, title, Products, Home }) => {
             src={logo}
             alt="Descrição da imagem"
             className="me-5 w-100"
-            style={{ height: "50px", fontSize:"500px" }} // Aumenta o tamanho do logo para corresponder à altura
+            style={{ height: "50px", fontSize: "500px" }} // Aumenta o tamanho do logo para corresponder à altura
           />
           <h1 className="m-0">{title}</h1>
         </Link>
@@ -39,14 +39,14 @@ const Navbar = ({ logo, title, Products, Home }) => {
 
         {/* Links e barra de pesquisa */}
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto align-items-center">
-            <li className="nav-item">
-              <Link to="/Home" className="nav-link text-white">
+          <ul className="navbar-nav ms-auto align-items-center ">
+            <li className="nav-item btn btn-warning me-3 ">
+              <Link to="/" className="nav-link text-primary">
                 {Home}
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-link text-white">
+            <li className="nav-item btn btn-warning me-3">
+              <Link to="/product" className="nav-link text-primary">
                 {Products}
               </Link>
             </li>
