@@ -1,3 +1,4 @@
+import img from '../../public/color css/tl.webp'
 const Home = () => {
   return (
     <>
@@ -23,7 +24,7 @@ const Home = () => {
         {/* Imagem */}
         <div className="text-center">
           <img
-            src="https://media.canva.com/v2/image-resize/format:PNG/height:351/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FrBGkM%2FMAFzxYrBGkM%2F1%2Fp.png/watermark:F/width:351?csig=AAAAAAAAAAAAAAAAAAAAALXYUTXyG5TOKAVAiGI1miRdweMTgHKYRR0esN4ziG0R&exp=1735341594&osig=AAAAAAAAAAAAAAAAAAAAACT6aeuIs-eHkzj619lfP1PdJYV6NSTAPtr-RABWIbkG&signer=media-rpc&x-canva-quality=screen"
+            src={img}
             alt="Ilustração"
             className="img-fluid rounded shadow w-100"
             style={{ maxWidth: "1000px", height: "auto" }} // Aumenta o tamanho da imagem
