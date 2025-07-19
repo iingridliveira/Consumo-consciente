@@ -1,9 +1,10 @@
 import axios from "axios";
 
 const blogFetch = axios.create({
-  baseURL: "https://consumo-consciente.onrender.com",
+  baseURL: import.meta.env.VITE_BASEURL,
   headers: {
     "Content-type": "application/json",
   },
 });
+
 export default blogFetch;
