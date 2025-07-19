@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-console.log("DATABASE_URL:", process.env.DATABASE_URL); // Ajuda no debug
+//console.log("DATABASE_URL:", process.env.DATABASE_URL); // Ajuda no debug
 
 const sequelize = new Sequelize(process.env.DATABASE_URL);
 
