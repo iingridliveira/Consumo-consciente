@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import blogFetch from "../axios/config.js";
 import { ButtonBack } from "../components/Buttonback/index.jsx";
+import Loading from "../components/Loading/index.jsx";
 
 const Historie1 = () => {
   const params = useParams();
@@ -30,7 +31,7 @@ const Historie1 = () => {
   return (
     <div className="container my-5">
       {Histories.length === 0 ? (
-        <p>Carregando ...</p>
+        <Loading/>
       ) : (
         Histories.map((historie) => (
           <div

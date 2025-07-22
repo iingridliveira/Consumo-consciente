@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import blogFetch from "../axios/config.js";
 import Button from "../components/Button/Button.jsx";
+import Loading from "../components/Loading/index.jsx";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -28,7 +29,7 @@ const Product = () => {
   return (
     <div className="container mt-4">
       {products.length === 0 ? (
-        <h1 className="text-center">Carregando...</h1>
+      <Loading/>
       ) : (
         <div className="row">
           {products.map((product) => (

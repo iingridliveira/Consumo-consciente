@@ -2,6 +2,7 @@ import "./Product.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import blogFetch from "../axios/config.js";
+import Loading from "../components/Loading/index.jsx";
 
 const Consumption = () => {
   const params = useParams();
@@ -33,7 +34,7 @@ const Consumption = () => {
   return (
     <div className="container mt-5">
       {Consumptions.length === 0 ? (
-        <h1 className="text-center">Carregando...</h1>
+        <Loading/>
       ) : (
         <div className="row">
           {Consumptions.map((consumption) => (
