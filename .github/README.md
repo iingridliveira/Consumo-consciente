@@ -19,15 +19,11 @@ Para começar a trabalhar com este projeto, siga as etapas abaixo:
     npm install
     ```
 
-2. **Configuração**:Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis de ambiente, substituindo os valores conforme necessário requisitado do banco https://customer.elephantsql.com:
-
+2. **Configuração**:Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis de ambiente, substituindo os valores conforme necessário requisitado do banco MySQL
+   **Exemplo**: usando localhost  DATABASE_URL sendo a url que tem o acesso ao banco de dados local e URL que da acesso ao front que sera usado na verificação do cors
     ```
-    DB_DATABASE=
-    DB_USERNAME=
-    DB_PASSWORD=
-    DB_HOST=
-    DB_PORT=
-    PORT=
+    DATABASE_URL= "mysql://root:minhasenha@localhost:3306/meu_banco_local"
+    URL="http://http://localhost:5173/"
     ```
 
     Certifique-se de configurar essas variáveis de ambiente com os valores corretos para o seu ambiente local.
