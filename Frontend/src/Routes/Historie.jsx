@@ -56,7 +56,7 @@ const Historie1 = () => {
                   }}
                 />
               </div>
-
+              
               {/* Informações do Produto */}
               <div
                 className="d-flex flex-column ms-4"
@@ -66,7 +66,7 @@ const Historie1 = () => {
                 <p>{historie.Production_process}</p>
                 <div className="list-unstyled  text-white">
                   <h4>Origem:⬇️ {historie.origin}</h4>
-
+                
                   <h4>Vida útil:⬇️ {historie.Lifetime}</h4>
                 </div>
               </div>
