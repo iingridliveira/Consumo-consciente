@@ -14,20 +14,34 @@ O projeto está disponível para acesso online. Você pode visualizá-lo [aqui](
 
 Para começar a trabalhar com este projeto, siga as etapas abaixo:
 
-1. **Instalação**: Execute o seguinte comando para instalar as dependências do projeto:
+1. **Banco de dados**: Ultilize do arquivo SQL disponível no repositório para criação do banco(nome do banco de sua preferência) e iserção de dados das tabelas.
+    
+   Arquivo SQL [aqui](https://github.com/iingridliveira/Consumo-consciente/blob/master/backup.sql).
+
+
+2. **Instalação**: Execute o seguinte comando para instalar as dependências do projeto:
     ```bash
-    npm install
+    npm install 
     ```
 
-2. **Configuração**:Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis de ambiente, substituindo os valores conforme necessário requisitado do banco MySQL
+3. **Configuração de variáveis de ambiente**:
+   
+
+ 3.1 Crie um arquivo `.env` na raiz do projeto  Backend(PASTA) adicione as seguintes variáveis de ambiente, substituindo os valores conforme necessário requisitado do banco MySQL
    **Exemplo**: usando localhost  DATABASE_URL sendo a url que tem o acesso ao banco de dados local e URL que da acesso ao front que sera usado na verificação do cors
-    ```
+
+
     DATABASE_URL= "mysql://root:minhasenha@localhost:3306/meu_banco_local"
     URL="http://http://localhost:5173/"
-    ```
 
-    Certifique-se de configurar essas variáveis de ambiente com os valores corretos para o seu ambiente local.
-3.  **Execução**:
+ 3.2 Crie um arquivo `.env` na raiz do projeto  Frontend(PASTA) VITE_BASEURL, vai ser a rota base para uso no front de requisições Http;
+
+
+     VITE_BASEURL= "http://localhost:3000/"
+
+     
+
+4.  **Execução**:
     - **Backend**: Acesse a pasta do backend no terminal:
         ```bash
         cd Backend
@@ -46,20 +60,21 @@ Para começar a trabalhar com este projeto, siga as etapas abaixo:
         npm run dev
         ```
 
-5. **Deploy**: Se aplicável, instruções sobre como fazer o deploy do projeto em um ambiente de produção.
+6. **Deploy**: Se aplicável, instruções sobre como fazer o deploy do projeto em um ambiente de produção.
 
 ## Tecnologias Utilizadas
 
 ### Frontend
 - **Framework**: React.js
 - **Bundler**: Vite.js
-- **Estilização**: CSS
-- **Rotas**: React Router (navegador)
+- **Estilização**: Bootstrap e css
+- **Rotas**: React Router dom
+- **Requisições**: Axios
 
 ### Backend
 - **Linguagem**: Node.js
 - **ORM**: Sequelize
-- **Banco de Dados**: PostgreSQL
+- **Banco de Dados**: MySQL
 
 <!-- ## Contribuição
 
