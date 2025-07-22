@@ -34,19 +34,17 @@ Para começar a trabalhar com este projeto, siga as etapas abaixo:
 3. **Configuração de variáveis de ambiente**:
    
 
- 3.1 Crie um arquivo `.env` na raiz do projeto  Backend(PASTA) adicione as seguintes variáveis de ambiente, substituindo os valores conforme necessário requisitado do banco MySQL
+ - **3.1 Crie um arquivo**`.env` na raiz do projeto  Backend(PASTA) adicione as seguintes variáveis de ambiente, substituindo os valores conforme necessário requisitado do banco MySQL
    **Exemplo**: usando localhost  DATABASE_URL sendo a url que tem o acesso ao banco de dados local e URL que da acesso ao front que sera usado na verificação do cors
 
-
+    ```
     DATABASE_URL= "mysql://root:minhasenha@localhost:3306/meu_banco_local"
     URL="http://http://localhost:5173/"
+    
+ - **3.2 Crie um arquivo**  `.env` na raiz do projeto  Frontend(PASTA) VITE_BASEURL, vai ser a rota base para uso no front de requisições Http;
 
- 3.2 Crie um arquivo `.env` na raiz do projeto  Frontend(PASTA) VITE_BASEURL, vai ser a rota base para uso no front de requisições Http;
-
-
+     ```
      VITE_BASEURL= "http://localhost:3000/"
-
-     
 
 4.  **Execução**:
     - **Backend**: 
