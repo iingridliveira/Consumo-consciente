@@ -19,8 +19,15 @@ Para começar a trabalhar com este projeto, siga as etapas abaixo:
    Arquivo SQL [aqui](https://github.com/iingridliveira/Consumo-consciente/blob/master/backup.sql).
 
 
-2. **Instalação**: Execute o seguinte comando para instalar as dependências do projeto:
+2. **Instalação**: Execute os seguintes comandos para instalar as dependências dos projetos:
+    - **Backend**
     ```bash
+    cd Backend
+    npm install 
+    ```
+    - **Frontend** 
+    ```bash
+    cd Frontend
     npm install 
     ```
 
@@ -42,25 +49,18 @@ Para começar a trabalhar com este projeto, siga as etapas abaixo:
      
 
 4.  **Execução**:
-    - **Backend**: Acesse a pasta do backend no terminal:
+    - **Backend**: 
         ```bash
         cd Backend
-        ```
-      Em seguida, execute o seguinte comando para iniciar o servidor:
-        ```bash
         npm run dev
         ```
 
-    - **Frontend**: Acesse a pasta do frontend no terminal:
+    - **Frontend**:
         ```bash
         cd Frontend
-        ```
-      Em seguida, execute o seguinte comando para iniciar o servidor:
-        ```bash
         npm run dev
         ```
 
-6. **Deploy**: Se aplicável, instruções sobre como fazer o deploy do projeto em um ambiente de produção.
 
 ## Tecnologias Utilizadas
 
